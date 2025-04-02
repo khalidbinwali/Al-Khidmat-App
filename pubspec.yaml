@@ -55,6 +55,10 @@ flutter:
     - assets/pin.png
     - assets/Vector.png
     - assets/notification.png
+    - assets/Mask.png
+    - assets/plant.png
+    - assets/plus.png
+    - assets/submit.png
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
