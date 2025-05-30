@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class ScreenTen extends StatelessWidget {
+class attendanceHistory extends StatelessWidget {
   final List<Map<String, String>> attendenceData = List.generate(
     11,
         (index) => {
@@ -11,7 +11,7 @@ class ScreenTen extends StatelessWidget {
     },
   );
 
-  ScreenTen({super.key});
+  attendanceHistory({super.key});
 
   @override
   Widget build(BuildContext context) {

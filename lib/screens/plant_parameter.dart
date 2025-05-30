@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class ScreenFour extends StatefulWidget {
-  const ScreenFour({super.key});
+class plantParameter extends StatefulWidget {
+  const plantParameter({super.key});
 
   @override
-  State<ScreenFour> createState() => _ScreenFourState();
+  State<plantParameter> createState() => _plantParameterState();
 }
 
-class _ScreenFourState extends State<ScreenFour> {
+class _plantParameterState extends State<plantParameter> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

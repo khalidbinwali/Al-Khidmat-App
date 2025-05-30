@@ -52,14 +52,14 @@ class _ScreenElevenState extends State<ScreenEleven> {
       slivers: [
         SliverToBoxAdapter(
           child: Padding(
-            padding: const EdgeInsets.all(16),
+            padding: const EdgeInsets.symmetric(horizontal: 16,vertical: 8),
             child:
                 TextFormField(
                   decoration: InputDecoration(
                     hintText: 'Search...',
                     hintStyle: TextStyle(fontSize: 14, color: Color(0xFFADB5BD)),
                     enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(15),
                       borderSide: BorderSide(
                         color: Colors.black.withOpacity(0.25),
                       ),
@@ -129,13 +129,13 @@ class _ScreenElevenState extends State<ScreenEleven> {
           ),
         ),
         SliverToBoxAdapter(
-          child: SizedBox(height: 20),
+          child: SizedBox(height: 40),
         ),
         
         SliverToBoxAdapter(
           child:  Center(
               child: SizedBox(
-                  width: 350,
+                  width: 325,
                   height: 45,
                   child: ElevatedButton(
                     onPressed: () {

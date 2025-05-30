@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-class ScreenNine extends StatefulWidget {
-  const ScreenNine({super.key});
+class applyForBreak extends StatefulWidget {
+  const applyForBreak({super.key});
 
   @override
-  State<ScreenNine> createState() => _ScreenNineState();
+  State<applyForBreak> createState() => _applyForBreakState();
 }
 
-class _ScreenNineState extends State<ScreenNine> {
+class _applyForBreakState extends State<applyForBreak> {
   final TextEditingController nameController = TextEditingController();
   final TextEditingController shiftIdController = TextEditingController();
 
@@ -59,7 +59,11 @@ class _ScreenNineState extends State<ScreenNine> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Shift Info')),
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        title: const Text('Apply for a break'),
+        backgroundColor: Colors.white,
+      ),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
@@ -67,9 +71,16 @@ class _ScreenNineState extends State<ScreenNine> {
             // First row: Name + Shift ID
             Row(
               children: [
-                Expanded(child: _buildTextField('Name', controller: nameController)),
+                Expanded(
+                  child: _buildTextField('Name', controller: nameController),
+                ),
                 SizedBox(width: 8),
-                Expanded(child: _buildTextField('Shift ID / Shift Timing', controller: shiftIdController)),
+                Expanded(
+                  child: _buildTextField(
+                    'Shift ID / Shift Timing',
+                    controller: shiftIdController,
+                  ),
+                ),
               ],
             ),
 
@@ -130,23 +141,65 @@ class _ScreenNineState extends State<ScreenNine> {
             ),
 
             const SizedBox(height: 12),
-
             // Dropdown
             DropdownButtonFormField<String>(
               value: replacementOperator,
               decoration: InputDecoration(
                 hintText: 'Replacement Operator Name',
-                border: OutlineInputBorder(borderRadius: BorderRadius.circular(6)),
-                contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                hintStyle: TextStyle(color: Color(0xFFADB5BD), fontSize: 14),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Color(
+                      0xFFEFEFEF,
+                    ), // 👈 Border color when not focused
+                    width: 1,
+                  ),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Color(
+                      0xFFEFEFEF,
+                    ), // 👈 Border color when not focused
+                    width: 1,
+                  ),
+                ),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(6),
+                ),
+                contentPadding: const EdgeInsets.symmetric(
+                  horizontal: 16,
+                  vertical: 12,
+                ),
               ),
-              items: operators
-                  .map((op) => DropdownMenuItem(value: op, child: Text(op)))
-                  .toList(),
+              items:
+                  operators
+                      .map((op) => DropdownMenuItem(value: op, child: Text(op)))
+                      .toList(),
               onChanged: (value) {
                 setState(() {
                   replacementOperator = value;
                 });
               },
+            ),
+            SizedBox(height: 350),
+            Center(
+              child: SizedBox(
+                width: 350,
+                height: 45,
+                child: ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Color(0xFF0160AC),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                  child: const Text(
+                    "Submit for Approval",
+                    style: TextStyle(fontSize: 18, color: Color(0xFFFFFFFF)),
+                  ),
+                ),
+              ),
             ),
           ],
         ),
@@ -154,14 +207,28 @@ class _ScreenNineState extends State<ScreenNine> {
     );
   }
 
-  Widget _buildTextField(String hint, {TextEditingController? controller, String? value}) {
+  Widget _buildTextField(
+    String hint, {
+    TextEditingController? controller,
+    String? value,
+  }) {
     return TextField(
       controller: controller,
       readOnly: value != null,
       decoration: InputDecoration(
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(5),
+          borderSide: BorderSide(
+            color: Color(0xFFEFEFEF), // 👈 Border color when not focused
+            width: 1,
+          ),
+        ),
         hintText: value ?? hint,
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(6)),
-        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+        hintStyle: TextStyle(color: Color(0xFFADB5BD), fontSize: 14),
+        contentPadding: const EdgeInsets.symmetric(
+          horizontal: 16,
+          vertical: 12,
+        ),
       ),
     );
   }

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class ScreenSix extends StatefulWidget {
-  const ScreenSix({super.key});
+class describeFault extends StatefulWidget {
+  const describeFault({super.key});
 
   @override
-  State<ScreenSix> createState() => _ScreenSixState();
+  State<describeFault> createState() => _describeFaultState();
 }
 
-class _ScreenSixState extends State<ScreenSix> {
+class _describeFaultState extends State<describeFault> {
   final Map<String, bool> faults = {
     'H.P. Pump Fault': true,
     'Feed Pump Fault': true,
@@ -30,8 +30,10 @@ class _ScreenSixState extends State<ScreenSix> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        title: const Text('Fault Selection'),
+        backgroundColor: Colors.white,
+        title: const Text('Describe Fault'),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
@@ -42,7 +44,7 @@ class _ScreenSixState extends State<ScreenSix> {
               return CheckboxListTile(
                 title: Text(
                   entry.key,
-                  style: const TextStyle(fontSize: 16),
+                  style: const TextStyle(fontSize: 14,color: Color(0xFF7B7B7B)),
                 ),
                 value: entry.value,
                 onChanged: (bool? value) {
@@ -50,6 +52,12 @@ class _ScreenSixState extends State<ScreenSix> {
                     faults[entry.key] = value ?? false;
                   });
                 },
+                activeColor:Colors.white,
+                checkColor: Colors.blue,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(5),
+                ),
+
                 controlAffinity: ListTileControlAffinity.trailing,
                 contentPadding: const EdgeInsets.symmetric(horizontal: 0),
               );

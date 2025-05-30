@@ -62,6 +62,9 @@ flutter:
     - assets/submit.png
     - assets/cup.png
     - assets/calender.png
+    - assets/AlkhidmatLogo.png
+    - assets/chat.png
+    - assets/ticket.png
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

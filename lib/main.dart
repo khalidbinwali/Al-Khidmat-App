@@ -1,16 +1,18 @@
-import 'package:al_khidmat_app/screens/Screen_eight.dart';
-import 'package:al_khidmat_app/screens/Screen_nine.dart';
+import 'package:al_khidmat_app/navigation/routes.dart';
+import 'package:al_khidmat_app/navigation/routes_name.dart';
+import 'package:al_khidmat_app/screens/extra_working_days.dart';
+import 'package:al_khidmat_app/screens/apply_for_break.dart';
 import 'package:al_khidmat_app/screens/Screen_thirteen.dart';
 import 'package:al_khidmat_app/screens/chat.dart';
 import 'package:al_khidmat_app/screens/screenEleven.dart';
-import 'package:al_khidmat_app/screens/screen_five.dart';
-import 'package:al_khidmat_app/screens/screen_four.dart';
-import 'package:al_khidmat_app/screens/screen_seven.dart';
-import 'package:al_khidmat_app/screens/screen_six.dart';
-import 'package:al_khidmat_app/screens/screen_ten.dart';
+import 'package:al_khidmat_app/screens/apply_leave.dart';
+import 'package:al_khidmat_app/screens/plant_parameter.dart';
+import 'package:al_khidmat_app/screens/requisition_form.dart';
+import 'package:al_khidmat_app/screens/describe_fault.dart';
+import 'package:al_khidmat_app/screens/attendance_history.dart';
 import 'package:al_khidmat_app/screens/screen_twelve.dart';
 import 'package:al_khidmat_app/screens/screen_two.dart';
-import 'package:al_khidmat_app/state_management/Main_screen.dart';
+import 'package:al_khidmat_app/state_management/Bottom_Bar.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -29,7 +31,8 @@ class MyApp extends StatelessWidget {
 
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home:  ScreenChat (),
+      initialRoute: RouteName.splashScreen,
+      onGenerateRoute: Routes.generateRoute,
       debugShowCheckedModeBanner: false,
     );
   }

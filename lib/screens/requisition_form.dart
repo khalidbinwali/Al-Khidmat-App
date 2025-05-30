@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-class ScreenEight extends StatefulWidget {
-  const ScreenEight({super.key});
+class requisitionForm extends StatefulWidget {
+  const requisitionForm({super.key});
 
   @override
-  State<ScreenEight> createState() => _ScreenEightState();
+  State<requisitionForm> createState() => _requisitionFormState();
 }
 
-class _ScreenEightState extends State<ScreenEight> {
+class _requisitionFormState extends State<requisitionForm> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
@@ -14,7 +14,7 @@ class _ScreenEightState extends State<ScreenEight> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         automaticallyImplyLeading: true,
-        title: const Text('Add Extra Working Day', style: TextStyle(fontSize: 22)),
+        title: const Text('Requisition Form', style: TextStyle(fontSize: 22)),
       ),
       body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -24,33 +24,12 @@ class _ScreenEightState extends State<ScreenEight> {
                 children: [
                   const SizedBox(height: 20),
                   // Row 1
-                  _buildTextField('Enter your name'),
+                  _buildFieldRow("Filters", "Chemical/Antiscalant"),
                   // Row 2
-                  _buildTextField('Date'),
+                  _buildFieldRow("Cap 19 Ltr", "Can 16 Ltr"),
                   // Row 3
-                  _buildTextField('Start Time'),
-                  //Row 4
-                  _buildTextField('End Time'),
-                  const TextField(
-                    maxLines: 5,
-                    decoration: InputDecoration(
-                      hintText: 'Additional Notes',
-                      hintStyle: TextStyle(
-                        color: Color(0xFFADB5BD),
-                        fontSize: 14,
-                      ),
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(5)),
-                        borderSide: BorderSide(
-                          color: Color(0xFFEFEFEF),
-                          width: 1,
-                        ),
-                      ),
-                      contentPadding:
-                      EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-                    ),
-                  ),
-                  SizedBox(height: 500),
+                  _buildTextField('ADM Cards.(Only for 3 Plants)'),
+                  SizedBox(height: 380),
                   Center(
                       child: SizedBox(
                           width: 350,
@@ -63,7 +42,7 @@ class _ScreenEightState extends State<ScreenEight> {
                               backgroundColor: Color(0xFF0160AC),
                               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                             ),
-                            child: const Text("Submit for Approval", style: TextStyle(fontSize: 18, color: Color(0xFFFFFFFF))),
+                            child: const Text("Submit", style: TextStyle(fontSize: 18, color: Color(0xFFFFFFFF))),
                           ))),
 
                   const SizedBox(height: 30),
@@ -108,4 +87,4 @@ Widget _buildTextField(String label, {double? width, int maxLine = 1}) {
           ),
         ),
       ));
-}
+  }

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class ScreenFive extends StatefulWidget {
-  const ScreenFive({super.key});
+class applyLeave extends StatefulWidget {
+  const applyLeave({super.key});
 
   @override
-  State<ScreenFive> createState() => _ScreenFiveState();
+  State<applyLeave> createState() => _applyLeaveState();
 }
 
-class _ScreenFiveState extends State<ScreenFive> {
+class _applyLeaveState extends State<applyLeave> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +33,7 @@ class _ScreenFiveState extends State<ScreenFive> {
 
                   _buildFieldRow('Leave Ends', 'Leave Starts'),
                   _buildFieldRow('Total Leave Days', 'Reason for Leave'),
-                  const SizedBox(height: 500),
+                  const SizedBox(height: 260),
                   Center(
                       child: SizedBox(
                           width: 350,
